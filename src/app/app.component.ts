@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'translocotest';
+
+
+  constructor(private translocoService: TranslocoService) {
+    this.title = this.translocoService.translate('titre');
+  }
 }
